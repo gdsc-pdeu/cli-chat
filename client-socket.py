@@ -6,7 +6,7 @@ nickname = input("Enter a nickname: ")
 
 # Connecting the client to the server
 clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-clientSocket.connect(('127.0.0.1', 12458))
+clientSocket.connect((socket.gethostbyname(socket.gethostname()), 12458))
 
 # Listening to the server and Sending the nickname
 def receive():
@@ -28,7 +28,7 @@ def receive():
 # A function which helps in writing messages
 def write():
     while True:
-        message = '> {}: {}'.format(nickname, input('> '))
+        message = '> {}: {}'.format(nickname, input(' '))
         clientSocket.send(message.encode('ascii'))
 
 # Starting Threads For Listening And Writing

@@ -1,7 +1,7 @@
 import socket
 import threading
 
-host = '127.0.0.1'
+host = socket.gethostbyname(socket.gethostname())
 port = 12458
 
 # Starting the Server
@@ -58,6 +58,8 @@ def receive():
         # target is a callable object to be invoked
         thread = threading.Thread(target = handle, args = (client,))
         thread.start()  # Used to start a thread's activity
+        # Printing the number of active connections apart from the main thread
+        print(f"Active Connections: {threading.activeCount() - 1}")
 
 print("The Server is listening.")
 receive()
