@@ -7,6 +7,9 @@ This is a **non-exhaustive** list:
 - Get it to connect to the internet through peer-to-peer connections.
 - Beautify the look.
 
+# Licence
+MIT Licence
+
 # Author
 
 <a href="https://github.com/ThenoobMario">Nachiket Soni</a>
